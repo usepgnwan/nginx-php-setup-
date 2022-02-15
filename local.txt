@@ -1,0 +1,12 @@
+ 
+zone "smpmuhammadiyah7bdg.com" {
+     type master;
+     file "/etc/bind/zones/db.smpmuhammadiyah7bdg.com";
+     allow-transfer { 103.147.3.212; }; # catatan: ini IP slave (ns2), jika ada
+};
+
+zone "103.147.smpmuhammadiyah7bdg.in-addr.arpa" {
+     type master;
+     file "/etc/bind/zones/db.103.147.smpmuhammadiyah7bdg";
+     allow-transfer { 103.147.3.212; }; # ns2
+};

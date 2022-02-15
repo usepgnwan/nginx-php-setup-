@@ -1,0 +1,20 @@
+server {
+        listen 80 default_server;
+        listen [::]:80 default_server;
+        root /var/www/html;
+        index index.html index.htm index.nginx-debian.html;
+        server_name _;
+        location / {
+                try_files $uri $uri/ =404;
+        }
+       location /nginx_status {
+        stub_status;
+        allow 103.146.244.248; #only allow requests from localhost
+        deny all; #deny all other hosts
+       }
+}
+
+b -c 40 -n 50000 http://34.87.32.2/ | grep "per second"
+
+
+sudo ufw allow from 34.87.32.2/24 to any port 3000

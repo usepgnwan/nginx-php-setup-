@@ -1,0 +1,3 @@
+named-checkzone sman3cikampek /etc/bind/zones/db.sman3cikampek
+
+named-checkzone 36.95.smpn1rajapolah.in-addr.arpa /etc/bind/zones/db.36.95.smpn1rajapolah

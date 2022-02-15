@@ -1,0 +1,24 @@
+ 
+zone "mtsnurulhudapasirangin.com" {
+     type master;
+     file "/etc/bind/zones/";
+     allow-transfer { 103.146.244.248; }; # catatan: ini IP slave (ns2), jika ada
+};
+
+zone "103.146.mtsnurulhudapasirangin.in-addr.arpa" {
+     type master;
+     file "/etc/bind/zones/";
+     allow-transfer { 103.146.244.248; }; # ns2
+};
+zone "mtsnurulhudapasirangin.com" {
+     type master;
+     file "/etc/bind/zones/db.mtsnurulhudapasirangin.com";
+     allow-transfer { 103.146.244.248; }; # catatan: ini IP slave (ns2), jika ada
+};
+
+zone "103.146.mtsnurulhudapasirangin.in-addr.arpa" {
+     type master;
+     file "/etc/bind/zones/db.103.146.mtsnurulhudapasirangin";
+     allow-transfer { 103.146.244.248; }; # ns2
+};
+

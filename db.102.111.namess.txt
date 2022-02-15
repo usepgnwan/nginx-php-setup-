@@ -1,0 +1,17 @@
+$TTL 604800
+@       IN      SOA     ns1.sman3cikampek. admin.sman3cikampek. (
+        3       ; Serial
+        604800  ; Refresh
+        86400   ; Retry
+        2419200 ; Expire
+        604800) ; Negative Cache TTL
+
+; Name servers
+@       14400   IN      NS      ns1.sman3cikampek.
+@       14400   IN      NS      ns2.sman3cikampek.
+
+; PTR Records
+1.0     14400   IN      PTR sman3cikampek.        ; 36.95.173.93
+1.0     14400   IN      PTR ns1.sman3cikampek.    ; 36.95.173.93
+1.0     14400   IN      PTR ns2.sman3cikampek.    ; 36.95.173.93
+1.0     14400   IN      PTR mail.sman3cikampek.   ; 36.95.173.93

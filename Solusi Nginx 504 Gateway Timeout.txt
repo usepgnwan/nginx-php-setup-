@@ -1,0 +1,42 @@
+https://idnetter.com/solusi-nginx-504-gateway-timeout/
+
+Solusi Nginx 504 Gateway Timeout
+Posted on April 25, 2016 By Omar
+
+Solusi website loading lama tiba-tiba error 504 Gateway Timeout Nginx. Konek via SSH dan ikuti langkah berikut ini untuk memperbaikinya.
+
+1. Edit nginx.conf
+
+vi /etc/nginx/nginx.conf
+
+Tambahkan baris berikut:
+
+fastcgi_read_timeout 300;
+
+2. Edit konfigurasi php
+
+vi /etc/php.ini
+
+Naikkan value menjadi 300
+
+max_execution_time = 300
+
+3. edit konfigurasi php-fpm
+
+vi /etc/php-fpm.d/www.conf
+
+Add baris berikut
+
+request_terminate_timeout = 300
+
+4. reload nginx dan restart php-fpm
+
+nginx -s reload
+service php-fpm restart
+
+Selesai.
+
+Catatan:
+Periksa script, apakah didalam script halaman web merequest konten dari layanan / server lain yang ada kemungkinan sourcenya dialihkan permanen atau sudah dihapus. Ini pengalaman pribadi saya waktu nge-grab konten dari lookup.dbpedia.org ternyata layanan API nya saya cek sudah ga bisa diakses atau mungkin IP saya yang diblock.
+
+Referensi : Nginx Module

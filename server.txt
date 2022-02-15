@@ -1,0 +1,67 @@
+seon.development@gmail.com
+Source :  https://idnetter.com/cara-membuat-private-nameserver-bind/ 
+sudo chmod 777 -R /var/www/masalhuda.online/public_html/assets/upload/
+sudo chmod 777 -R masalhuda.online/public_html/assets/plugins/ckeditor4/plugins/ckeditor_wiris/formulas/
+sudo chmod 777 -R masalhuda.online/public_html/assets/plugins/ckeditor4/plugins/ckeditor_wiris/cache/
+
+sudo apt -y install software-properties-common
+sudo add-apt-repository ppa:ondrej/php
+sudo apt-get update
+
+sudo apt -y install php7.4
+sudo apt-get install -y php7.4-{bcmath,bz2,intl,gd,mbstring,mysql,zip,curl,xml}
+
+sudo add-apt-repository ppa:certbot/certbot
+sudo apt-get update
+sudo apt install python3-certbot-nginx
+
+
+
+
+upload_max_filesize = 1024M
+memory_limit = -1
+post_max_size = 1024M
+max_execution_time = 300
+max_input_time = 1800
+request_terminate_timeout = 300
+
+/etc/php/7.4/apache2
+service php7.4-fpm restart
+php -i | grep -i "loaded configuration file"
+php -i | grep -i "upload\_max\_filesize\|post\_max\_size\|max\_file\_uploads"
+ 
+
+
+calculat https://spot13.com/pmcalculator/
+
+
+
+
+seon.development@gmail.com
+
+sudo apt-get update
+sudo apt-get nginx -y
+sudo apt -y install software-properties-common
+sudo add-apt-repository ppa:ondrej/php
+sudo apt-get update
+
+sudo apt -y install php7.4
+sudo apt-get install -y php7.4-{bcmath,bz2,intl,gd,mbstring,mysql,zip,curl,xml}
+
+sudo add-apt-repository ppa:certbot/certbot
+sudo apt-get update
+sudo apt install python3-certbot-nginx
+
+ nginx -V 2>&1 | grep -o with-http_stub_status_module --with-http_stub_status_module
+
+location /nginx_status { 
+          stub_status; 
+          allow 34.124.187.245; #only allow requests from localhost
+          deny all; #deny all other hosts 
+}
+eduva.co.id@gmail.com
+
+cek cpu :
+grep ^processor /proc/cpuinfo | wc -l
+ulimit -n
+

@@ -1,0 +1,13 @@
+location ~ [^/]\.php(/|$) { #open location bracket
+
+    fastcgi_split_path_info ^(.+?\.php)(/.*)$;
+    if (!-f $document_root$fastcgi_script_name) { #open condition bracket
+        return 404;
+    } #close condition bracket
+
+    include fastcgi_params;
+    fastcgi_index index.php;
+    fastcgi_param SCRIPT_FILENAME $document_root$fastcgi_script_name;
+    fastcgi_pass unix:/run/php/php7.4-fpm.sock;
+
+} #close location bracket
